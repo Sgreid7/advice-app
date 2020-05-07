@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import RandomAdvice from "./components/randomAdvice"
+import axios from "axios"
 
-function App() {
+const App = () => {
+  const [advice, setAdvice] = useState("");
+
+  const getAdvice = async () => {
+    const resp = await axios.get("https://api.adviceslip.com/advice")
+
+    setAdvice(resp.data.slip.advice)
+    console.log(advice)
+  }
+
+  useEffect(() => {
+    getAdvice()
+  },);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RandomAdvice advice={advice} />
     </div>
   );
 }
 
 export default App;
+
