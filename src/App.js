@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div>
-      <RandomAdvice advice={advice} />
+      <RandomAdvice advice={advice} generateAdvice={getAdvice} />
     </div>
   );
 }
