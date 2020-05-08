@@ -1,7 +1,7 @@
-import React from 'react';
-import styled, { keyframes } from "styled-components"
-import Mountains from "../images/mountains.jpg"
-import "../App.css"
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import Mountains from "../images/mountains.jpg";
+import "../App.css";
 
 const advice = ({ advice, generateAdvice }) => {
   return (
@@ -9,11 +9,13 @@ const advice = ({ advice, generateAdvice }) => {
       <h1>Random Advice of the Day</h1>
       <div className="card">
         <p>{advice}</p>
-        <button className="submit" onClick={generateAdvice}><span>One advice, please!</span></button>
+        <button className="submit" onClick={generateAdvice}>
+          <span>One advice, please!</span>
+        </button>
       </div>
     </CardWrapper>
   );
-}
+};
 
 export default advice;
 
@@ -33,7 +35,7 @@ const rotate = keyframes`
     100% {
       transform: rotate(0deg) translate3d(0, 0, 0);
     }
-`
+`;
 const storm = keyframes`
     0% {
       transform: translate3d(0, 0, 0) translateZ(0);
@@ -50,7 +52,7 @@ const storm = keyframes`
     100% {
       transform: translate3d(0, 0, 0) translateZ(0);
     }
-  `
+  `;
 
 const CardWrapper = styled.section`
   display: flex;
@@ -58,17 +60,19 @@ const CardWrapper = styled.section`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${Mountains});
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(${Mountains});
   background-size: cover;
   background-position: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 
   h1 {
     color: #fff;
     font-size: 3rem;
     text-shadow: 0.1rem 0.1rem 0.1rem deepskyblue;
+    text-align: center;
   }
-  
+
   .card {
     color: #fff;
     font-size: 1.2rem;
@@ -108,7 +112,7 @@ const CardWrapper = styled.section`
     border: 0.1rem solid deepskyblue;
     border-radius: 3rem;
     opacity: 1;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     transition: 0.3s ease;
     outline: none;
 
@@ -133,5 +137,5 @@ const CardWrapper = styled.section`
       width: 80vw;
       height: 40vh;
     }
-  } 
-`
+  }
+`;
