@@ -67,10 +67,13 @@ const CardWrapper = styled.section`
   font-family: "Poppins", sans-serif;
 
   h1 {
-    color: #fff;
-    font-size: 3rem;
-    text-shadow: 0.1rem 0.1rem 0.1rem deepskyblue;
+    /* color: #fff; */
+    font-size: 4rem;
+    /* text-shadow: 0.1rem 0.1rem 0.1rem deepskyblue; */
     text-align: center;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: deepskyblue;
   }
 
   .card {
